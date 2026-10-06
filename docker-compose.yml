@@ -1,0 +1,9 @@
+services:
+  operator:                              # GANTI dari "service-name"
+    image: rapid7-dev:latest
+    tty: true
+    stdin_open: true
+    working_dir: /workspace
+    volumes:
+      - .:/workspace:z                   # seluruh repo terbaca dari dalam Ubuntu
+      - /var/run/docker.sock:/var/run/docker.sock
